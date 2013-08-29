@@ -3,8 +3,8 @@ development:
   database: koala_development
   pool: 5
   timeout: 5000
-  host:localhost
-  username:ShanaWeitzen
+  host: localhost
+  username: ShanaWeitzen
   password: Tinydancer28
 
 # Warning: The database defined as "test" will be erased and
@@ -15,7 +15,8 @@ test:
   database: koala_development
   pool: 5
   timeout: 5000
-   host:localhost
+  host: localhost
   username: ShanaWeitzen
   password: Tinydancer28
 
+# rake db:setup
