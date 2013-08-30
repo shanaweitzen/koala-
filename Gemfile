@@ -34,10 +34,13 @@ group :doc do
 end
 
 group :test, :development do
-	gem 'rspec-rails'
-	gem 'capybara'
-	gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
+
+gem 'pusher'
 
 gem 'rails_12factor', group: :production
 

@@ -1,3 +1,8 @@
 class User < ActiveRecord::Base
-	# validates :species, presence: true
+	attr_accessor :name, :password, :user_name , :email_address
+	# validates :name, presence: true
+	# email address
+	# password
+	# user name 
+
 end
