@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
 	
+	before_action :is_authenticated 
 	
 	def index
 		@messages = Message.all
@@ -10,6 +11,7 @@ class ChatsController < ApplicationController
 	def message
 		@messages = Message.new
 	end
+
 
 	
 

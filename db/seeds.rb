@@ -15,10 +15,3 @@ user = User.create(
 )
 
 
-user = User.create(
-	first_name: 'Orie', 
-	last_name:'Schiffman',
-	email: 'oriems@gmail.com', 
-	password_hash:'pents',
-	password_salt: 'pents'
-)

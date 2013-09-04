@@ -6,21 +6,18 @@ class SessionsController < ApplicationController
   def create
     email = params[:user][:email]
 
-    if email_exists?(email)
-      @user = User.find_by(email: email)
+      if @user = User.authenticate(email, params[:user][:password]) 
 
-      if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        #redirect_to new_user_timecapsule_url(@user)
-        # redirect_to chats_url
+        
+        redirect_to chats_url
 
       else
-        flash.now[:alert] = "Invalid Password. Please try again..."
-        render :new
+        flash.now[:alert] = "Invalid Credentials. Please try again..."
+        redirect_to root_url  
       end
-    else
-      redirect_to login_path, alert: "Invalid Email. Please try again..."
-    end
+   
+    
   end
 
   def destroy
