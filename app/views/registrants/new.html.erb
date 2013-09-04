@@ -1,0 +1,7 @@
+<p>Register</p>
+
+<%= form_for @registrant, url: register_path, method: :post do |f| %>
+<%= f.text_field :email, class:"email", placeholder: "koala@koala.com" %>
+<%= f.submit "Register", class: "btn btn-primary" %>
+
+<% end %>

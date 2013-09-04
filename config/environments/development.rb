@@ -27,6 +27,8 @@ Koala::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  
+
 require 'pusher'
   Pusher.app_id = '52964'
   Pusher.key    = '5e4ecb05e15638c23f86'

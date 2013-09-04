@@ -6,8 +6,9 @@
 	  <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
 	  <script type="text/javascript">
 	    $(document).ready(function(){
-		    var pusher = new Pusher('5e4ecb05e15638c23f86');
-		    var channel = pusher.subscribe('messages');
+		    var pusher = new Pusher('5e4ecb05e15638c23f86'); //my pusher key
+		    var channel = pusher.subscribe('messages'); 
+		    // the channel I'm subscribing to, it could be anything
 
 		 //    $('#send').click(function(e){
 			// 	var message = $('form input[type="text"]').val();
@@ -22,19 +23,21 @@
 		      }
 		    };
 
-		    channel.bind('new_message', function(data) { //reading 
-		    	$("#messageWindow li:last-child").append('<li>message</li>')
+		    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
+		    	$("#messageWindow li:last-child").append('<li>' + data.text +' </li>') 
+		    			//inserts the new message as the last li
 		  		// $('new_message').appendTo('#messageWindow') 
-		  		alert('An event was triggered with message: ' + data.text);
-		  		// $("#conn_status").text(pusher.connection.state);
+		  		// alert('An event was triggered with message: ' + data.text);
 		    });	
 
-		});
 
+		});
+	    	
 	  </script>
 	</head>
 
-	<body>
+	<body data-spy="scroll" data-target="#messageWindow">
+		You are logged in <%= @user.email %> <!-- user.name -->
 		<div id="messageWindow">
 			<ul>
 				<% @messages.each do |message| %>
@@ -49,3 +52,4 @@
 	</body>
 
 </html>
+
