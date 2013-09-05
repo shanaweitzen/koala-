@@ -8,14 +8,9 @@
 	  <script type="text/javascript">
 	    $(document).ready(function(){
 		    var pusher = new Pusher('5e4ecb05e15638c23f86'); //my pusher key
-		    var channel = pusher.subscribe('messages'); 
+		    var privateChannel = pusher.subscribe('messages'); 
 		    // the channel I'm subscribing to, it could be anything
 
-		 //    $('#send').click(function(e){
-			// 	var message = $('form input[type="text"]').val();
-			// 	console.log(message);
-			// 	e.preventDefault();
-			// });
 
 		    // Enable pusher logging - don't include this in production
 		    Pusher.log = function(message) {
@@ -27,7 +22,7 @@
 		    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
 		    	$("#messageWindow li:last-child").append('<li>' + data.text +' </li>') 
 		    			//inserts the new message as the last li
-		  		// $('new_message').appendTo('#messageWindow') 
+		  		
 		  		// alert('An event was triggered with message: ' + data.text);
 		    });	
 
