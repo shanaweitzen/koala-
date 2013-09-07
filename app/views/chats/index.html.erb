@@ -38,14 +38,16 @@
 		<script id="template" type="text/template">
 			<div id="messageWindow">
 				{{#messages}}
-					<li><span class="user_name">{{ user.first_name }}</span> : {{ text }}</li>
+					<li><span class="user_name">{{ user.first_name }} {{user.last_name}}</span> : {{ text }}</li>
 				{{/messages }}
 			</div>
-			<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
-				<%= f.hidden_field :user_id , value: current_user.id %>
-				<%= f.text_field :text %>
-				<%= f.submit %>
-				<% end %>
+				<div class="message_field">
+					<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
+					<%= f.hidden_field :user_id , value: current_user.id %>
+					<%= f.text_field :text %>
+					<%= f.submit %>
+					<% end %>
+				</div>
 		</script>
 
 	</body>
@@ -62,7 +64,7 @@
 		}
 	})
 
-	function render(templateName){
+	function render(template){
 	}
 </script>
 
