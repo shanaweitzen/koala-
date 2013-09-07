@@ -9,21 +9,21 @@ feature "user creates account", js: true do
       scenario "creating an account" do
         visit '/users/new'
 
-        fill_in 'First name', with: 'Shana'
-        fill_in 'Last name', with: 'Weitzen'
-        fill_in 'Email', with: 'shanaweitzen@gmail.com'
-        fill_in 'Password', with: 'KoalaApp'
+        fill_in 'First name', with: 'Kermit'
+        fill_in 'Last name', with: 'Frog'
+        # fill_in 'Email', with: 'kermitthefrog@gmail.com'
+        fill_in 'Password', with: 'kermitthefrog'
 
        
 
-        click_button 'save'
+        click_button 'Sign In'
 
-        expect(page).to have_content 'Shana'
-        expect(page).to have_content 'Weitzen'
-        expect(page).to have_content 'shanaweitzen@gmail.com'
-        expect(page).to have_content 'email'
-        expect(page).to have_content 'KoalaApp'
-        expect(current_path).to eql users_path
+
+        expect(page).to have_content 'Kermit'
+        expect(page).to have_content 'Frog'
+        # expect(page).to have_content 'kermitthefrog@gmail.com'
+        expect(page).to have_content 'kermitthefrog'
+        expect(current_path).to eql new_user_path
       end
     end
   end

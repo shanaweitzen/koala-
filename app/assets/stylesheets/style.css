@@ -3,9 +3,20 @@
 	height: 700px;
 	width: 700px;
 	border:4px solid #EBEBEB;
+	overflow-y: scroll
 	
 }
 
+#messageWindow li {
+	list-style-type: none; 
+}
+
+#messageWindow li:nth-child(even){
+	background:#EBEBEB; 
+}
+.user_name{
+	font-weight: bold;
+}
 html,
 body {
   font-size: 100%; }

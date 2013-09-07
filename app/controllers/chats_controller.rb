@@ -12,7 +12,6 @@ class ChatsController < ApplicationController
 		@messages = Message.new
 	end
 
-
 	
 
 end

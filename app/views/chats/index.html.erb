@@ -2,13 +2,13 @@
  <html>
 	<head>
 	  <title>Pusher Test</title>
-	  <link href="pusher-realtime-chat-widget/src/pusher-chat.css" rel="stylesheet" type="text/css" />
+	 <!--  <link href="pusher-realtime-chat-widget/src/pusher-chat.css" rel="stylesheet" type="text/css" /> -->
 	  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	  <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
 	  <script type="text/javascript">
 	    $(document).ready(function(){
 		    var pusher = new Pusher('5e4ecb05e15638c23f86'); //my pusher key
-		    var privateChannel = pusher.subscribe('messages'); 
+		    var channel = pusher.subscribe('messages'); 
 		    // the channel I'm subscribing to, it could be anything
 
 
@@ -20,8 +20,9 @@
 		    };
 
 		    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
-		    	$("#messageWindow li:last-child").append('<li>' + data.text +' </li>') 
-		    			//inserts the new message as the last li
+		    	$("#messageWindow li").last().append('<li>' + data +' </li>');
+
+	    			//inserts the new message as the last li
 		  		
 		  		// alert('An event was triggered with message: ' + data.text);
 		    });	
@@ -31,21 +32,38 @@
 	    	
 	  </script>
 	</head>
-
-	<body data-spy="scroll" data-target="#messageWindow">
-		<p> Welcome, <%= @user.email %> ! </p><!-- user.name -->
-		<div id="messageWindow">
-			<ul>
-				<% @messages.each do |message| %>
-					<li><%= message.text %></li>
-				<% end %>
-			</ul>
+	<body>
+		<div id="holder">
 		</div>
-		<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
-			<%= f.text_field :text %>
-			<%= f.submit %>
-		<% end %>
-	</body>
+		<script id="template" type="text/template">
+			<div id="messageWindow">
+				{{#messages}}
+					<li><span class="user_name">{{ user.first_name }}</span> : {{ text }}</li>
+				{{/messages }}
+			</div>
+			<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
+				<%= f.hidden_field :user_id , value: current_user.id %>
+				<%= f.text_field :text %>
+				<%= f.submit %>
+				<% end %>
+		</script>
 
+	</body>
 </html>
+
+<script type="text/javascript">
+	var information;
+	$.ajax('/chats.json', {
+		success: function(data){
+			var template = $('#template').html();
+			console.log(data);
+			var renderHTML = Mustache.to_html(template, data);
+			$('#holder').html(renderHTML);
+		}
+	})
+
+	function render(templateName){
+	}
+</script>
+
 
