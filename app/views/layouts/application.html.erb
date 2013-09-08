@@ -3,13 +3,21 @@
 <head>
   <title>Koala</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
 <%= render 'layouts/header' %>
+
 <%= yield %>
+
+ <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+<script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
 
 </body>
 </html>

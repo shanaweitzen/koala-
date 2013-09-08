@@ -51,6 +51,8 @@ gem 'rabl'
 
 gem 'oj'
 
+gem 'figaro'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

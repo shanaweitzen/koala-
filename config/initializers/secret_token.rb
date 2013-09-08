@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Koala::Application.config.secret_key_base = '4a29231815ab33107dc1282d398e8ad08647e940edb36549fc2552a1e9f05c066100c90a38ce02862301aeeb6122195e9a04d920c66e92dfeb1aa99b6547513a'
+Koala::Application.config.secret_key_base = ENV['SECRET_TOKEN'] 

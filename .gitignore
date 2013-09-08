@@ -17,3 +17,6 @@
 /config/database.yml
 /vendor/bundle
 /.idea
+
+# Ignore application configuration
+/config/application.yml
