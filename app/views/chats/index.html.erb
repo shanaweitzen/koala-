@@ -13,11 +13,12 @@
 			<%= f.submit %>
 			<% end %>
 		</div>
+
 </script>
 
 <%= javascript_tag do %>
 	window.pusher_key = '<%= j ENV['PUSHER_KEY'] %>';
+	window.test = '<%= j "blah" %>'
 <% end %>
-
 
 

@@ -1,25 +1,28 @@
 ///pusher ///
 
 $(document).ready(function(){
-    var pusher = new Pusher(window.pusher_key); //my pusher key
-    var channel = pusher.subscribe('messages'); 
-    // the channel I'm subscribing to, it could be anything
+	holder = $("#holder");
 
+	if( holder.length > 0 ){
 
-    // Enable pusher logging - don't include this in production
-    Pusher.log = function(message) {
-      if (window.console && window.console.log) {
-        window.console.log(message);
-      }
-    };
+		 // Enable pusher logging - don't include this in production
+		 Pusher.log = function(message) {
+	      if (window.console && window.console.log) {
+	        window.console.log(message);
+	      }
+	    };
+	    var pusher = new Pusher(window.pusher_key); //my pusher key
+	    var channel = pusher.subscribe('messages'); 
+	    // the channel I'm subscribing to, it could be anything
 
-    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
-    	$("#messageWindow li").last().append('<li>' + data +' </li>');
+	    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
+	    	$("#messageWindow li").last().append('<li>' + data +' </li>');
 
-			//inserts the new message as the last li
-  		
-  		// alert('An event was triggered with message: ' + data.text);
-    });	
+				//inserts the new message as the last li
+	  		
+	  		// alert('An event was triggered with message: ' + data.text);
+	    });
+	 }	
 
 	//mustache ///
 
