@@ -3,19 +3,47 @@ class SessionsController < ApplicationController
     @user = User.new()
   end
 
+  # def create
+  #   email = params[:user][:email]
+
+  #     if @user = User.authenticate(email, params[:user][:password]) 
+
+  #       session[:user_id] = @user.id
+        
+  #       redirect_to chats_url
+
+  #     else
+  #       flash.now[:alert] = "Invalid Credentials. Please try again..."
+  #       redirect_to root_url  
+  #     end
+   
+    
+  # end
+
   def create
     email = params[:user][:email]
+    puts params.to_s   
 
-      if @user = User.authenticate(email, params[:user][:password]) 
+    puts "\n\n email "+email+"\n\n"
 
-        session[:user_id] = @user.id
-        
-        redirect_to chats_url
+    if email_exists?(email)
 
-      else
-        flash.now[:alert] = "Invalid Credentials. Please try again..."
-        redirect_to root_url  
-      end
+      puts "email exists"
+      @user = User.find_by(email: email)
+
+    if @user.authenticate( params[:user][:password]) 
+
+      session[:user_id] = @user.id
+      
+      redirect_to chats_url
+
+    else
+      puts "invalid email"
+
+      flash.now[:alert] = "Invalid Credentials. Please try again..."
+      redirect_to root_url  
+    end
+  end
    
     
   end

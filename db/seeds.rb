@@ -10,8 +10,8 @@ user = User.create(
 	first_name: 'Kermit',
 	last_name: 'Frog', 
 	email: 'kermitthefrog@gmail.com', 
-	password_hash: 'kermitthefrog',
-	password_salt: 'kermitthefrog'
+	password: 'kermitthefrog',
+	
 )
 
 
