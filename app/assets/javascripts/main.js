@@ -11,7 +11,8 @@ $(document).ready(function(){
 	        window.console.log(message);
 	      }
 	    };
-	    var pusher = new Pusher(window.pusher_key); //my pusher key
+	    console.log("key" + pusher_key)
+	    var pusher = new Pusher(pusher_key); //my pusher key
 	    var channel = pusher.subscribe('messages'); 
 	    // the channel I'm subscribing to, it could be anything
 

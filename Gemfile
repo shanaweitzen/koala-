@@ -42,7 +42,7 @@ end
 
 gem 'pusher'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', require: "bcrypt"
@@ -52,6 +52,8 @@ gem 'rabl'
 gem 'oj'
 
 gem 'figaro'
+
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
