@@ -15,3 +15,10 @@ user = User.create(
 )
 
 
+user = User.create(
+	first_name: 'Moby',
+	last_name: 'Dick', 
+	email: 'mobydick@gmail.com', 
+	password: 'mb',
+	
+)
