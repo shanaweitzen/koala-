@@ -31,7 +31,6 @@ Koala::Application.routes.draw do
 #Login
 
  
-
  post '/sessions', to: 'sessions#create'  
 
 #Logout
