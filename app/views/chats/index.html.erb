@@ -1,18 +1,19 @@
 <div id="holder"></div>
-
+<!--  -->
 <script id="template" type="text/template">
 	<div id="messageWindow">
 		{{#messages}}
 			<li><span class="user_name">{{ user.first_name }} {{user.last_name}}</span> : {{ text }}</li>
 		{{/messages }}
 	</div>
-		<div class="message_field">
-			<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
-			<%= f.hidden_field :user_id , value: current_user.id %>
-			<%= f.text_field :text %>
-			<%= f.submit "Send", class:"btn btn-primary"%>
-			<% end %>
+	<div class="message_field">
+		<div id="message_form">
+		 	<input type="text" id="message_field" placeholder="Type Here">
+		 	<input type="hidden" name="user_id" value="current_user.id">
+			<button type="button" class="btn message-btn">send
+			</button>
 		</div>
+	</div>
 
 </script>
 

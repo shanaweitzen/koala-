@@ -1,17 +1,19 @@
 ///pusher ///
 
 $(document).ready(function(){
+
+
 	holder = $("#holder");
 
 	if( holder.length > 0 ){
 
 		 // Enable pusher logging - don't include this in production
-		 Pusher.log = function(message) {
-	      if (window.console && window.console.log) {
-	        window.console.log(message);
-	      }
-	    };
-	    console.log("key" + pusher_key)
+		 // Pusher.log = function(message) {
+	  //     if (window.console && window.console.log) {
+	  //       window.console.log(message);
+	  //     }
+	  //   };
+	    
 	    var pusher = new Pusher(pusher_key); //my pusher key
 	    var channel = pusher.subscribe('messages'); 
 	    // the channel I'm subscribing to, it could be anything
@@ -25,23 +27,28 @@ $(document).ready(function(){
 	    });
 	 }	
 
-	//mustache ///
-
-	var information;
-		$.ajax('/chats.json', {
+	//mustache ///	
+	$.ajax('/chats.json', {
 		success: function(data){
 			var template = $('#template').html();
-			console.log(data);
+			// console.log(data);
 			var renderHTML = Mustache.to_html(template, data);
 			$('#holder').html(renderHTML);
+
+			$(".message-btn").on( "click", message_submit);
+
 		}
 	});
 
-	function render(template){
-	}
+
+
 
 });
 
+function message_submit(){
+	console.log('SEND MESSAGE');
+	return false;
+}
 
 	    	
 	  
