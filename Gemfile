@@ -42,7 +42,7 @@ end
 
 gem 'pusher'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', require: "bcrypt"
