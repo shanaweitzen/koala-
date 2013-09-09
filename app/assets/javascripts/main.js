@@ -47,6 +47,28 @@ $(document).ready(function(){
 
 function message_submit(){
 	console.log('SEND MESSAGE');
+
+	user_id = $(this).data("user_id");
+	console.log("USER_ID " + user_id);
+
+	text = $('#message_field').val();
+	console.log(message_field);
+
+	JSON_data = JSON.stringify( {"text":text, "user_id": user_id} );
+
+    path = "/messages";
+  
+  $.ajax({
+    type: "POST",
+    url: path,
+    data: JSON_data,
+    contentType: "application/json",
+
+    complete : function(r) {
+    	console.log("POSTED COMMAND");
+      // window.location.replace(path)
+    }
+  });
 	return false;
 }
 
