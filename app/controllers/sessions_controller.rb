@@ -3,22 +3,6 @@ class SessionsController < ApplicationController
     @user = User.new()
   end
 
-  # def create
-  #   email = params[:user][:email]
-
-  #     if @user = User.authenticate(email, params[:user][:password]) 
-
-  #       session[:user_id] = @user.id
-        
-  #       redirect_to chats_url
-
-  #     else
-  #       flash.now[:alert] = "Invalid Credentials. Please try again..."
-  #       redirect_to root_url  
-  #     end
-   
-    
-  # end
 
   def create
     email = params[:user][:email]

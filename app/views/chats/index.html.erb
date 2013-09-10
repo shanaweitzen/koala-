@@ -10,7 +10,9 @@
 			<%= form_for :message, url: messages_path, method: :post, remote: true do |f| %>
 			<%= f.hidden_field :user_id , value: current_user.id %>
 			<%= f.text_field :text, id: "message_field" %>
-			<%= f.submit "Send", class:"btn btn-primary message-btn"%>
+			<%= button_tag(type: 'submit', class:"btn btn-primary message") do %>
+				<i class="icon-arrow-right"></i>
+			<% end %>	
 			<% end %>
 	</div>
 </script>
