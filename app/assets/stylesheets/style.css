@@ -1,6 +1,6 @@
 #messageWindow{
 	margin: 0 auto;
-	max-height: 600px;
+	max-height: 560px;
 	max-width: 767px;
 	border:4px solid #EBEBEB;
 	overflow-y: scroll
@@ -23,10 +23,33 @@
 	width: 700px;
 	margin:0 auto;
 }
+#chat_room_bubble img{
+	height:40px;
+	width:40px;
+	margin-left: 0;
+}
+#chat_room_bubble{
+	/*border-top:1px solid #ffde4f;*/
+	/*border-bottom:1px solid #ffde4f;
+	width:100%;
+	*/
+}
+#chat_partial{
+	width:100%;
+	border-bottom:1px solid #ffde4f;
+}
+
+img{
+	/*margin:0 auto;*/
+	margin-left: 90px;
+
+}
+
 input#message_field{
-	padding: 9px 0px 9px 47px;
+	padding: 9px 0px 9px 6px;
 	height:20px;
-	width:86%;
+	width:92%;
+
 }
 #btn-primary-message{
 	width:6%;
@@ -35,31 +58,53 @@ input#message_field{
 	padding:4px 0px 9px 25px;
 	height:35px;
 }
+#sign_in_container{
+	width:500px;
+	margin: 0 auto;
+}
+input.btn.btn-primary{
+	width:473px;
+	height:45px;
+	/*background-color: #6cddff;*/
+	font-size: 24px;
+}
+.btn-primary:hover{
+	color:white;
+	/*background: #ffde4f;*/
+	/*background:#6cddff;*/
+}
+input#user_email.email, input#user_password.password, input#registrant_email.email, input#user_first_name, input#user_last_name{
+	height:45px;
+	width:465px;
+	font-size: 18px;
+}
+input#registrant_email.email{
+	font-size: 21px;
+}
 .icon-arrow-right{
 	color:#EBEBEB;
 }
+a{
+	text-decoration: none;
+}
+a.brand{
+	text-decoration: none;
+	padding-left: 33px;
+	margin: 6px 17px 0 0;
+	font-size: 18px;
+}
 html,
 body {
-  font-size: 100%; }
-
-body {
-  /*padding: 0;
-  margin: 0;*/
-  /*font-family: Georgia, sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;*/
-  /*position: relative;
-  cursor: default; */
+  font-size: 100%; 
+  font-family: 'Anton', sans-serif;
 }
+
 
 header{
  	background: #1FAEF2;
- 	height: 46px;
+ 	height: 43px;
  	margin-bottom: 15px;
- 	/*-webkit-box-shadow: 0px 6px 15px rgba(50, 50, 50, 0.32);
-  	-moz-box-shadow: 0px 6px 15px rgba(50, 50, 50, 0.32);
-  	box-shadow: 0px 6px 15px rgba(50, 50, 50, 0.32); */
+ 	width:100%;
 } 
 
 .email{
@@ -73,7 +118,9 @@ nav>ul>li {
 	display: block;
 	float: left;
 	color: white;
-	margin: 15px 17px 0 0; }
+	margin: 6px 17px 0 0;
+	text-decoration: none; 
+}
 
 .brand-message h2, .me-message h2{
 	text-align: center;
