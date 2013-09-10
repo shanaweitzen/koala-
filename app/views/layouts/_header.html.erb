@@ -1,10 +1,11 @@
 <header>
 <div class="row">
-	<a class="brand"><%= link_to 'KOLA CHAT', root_path %></a>
+	<a class="brand"><%= link_to 'KOALA CHAT', root_path %></a>
 		<nav class="menu_right">
 			<ul>
 				<% if current_user %>
 				 <li><%= link_to 'Logout', '/sessions/:id', method: :delete  %></li>
+				 <li><%= link_to 'Chat', chats_url %></li>
 				<% else %>			
 				<li><%= link_to 'Sign In', root_path %></li>	
 				<% end %>
