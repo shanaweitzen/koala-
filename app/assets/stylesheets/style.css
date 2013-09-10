@@ -84,7 +84,7 @@ input#registrant_email.email{
 .icon-arrow-right{
 	color:#EBEBEB;
 }
-a{
+a, a:hover{
 	text-decoration: none;
 }
 a.brand{
