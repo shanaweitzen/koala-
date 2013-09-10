@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 	    channel.bind('new_message', function(data) { //reading new message from the channel the specific channel
 	    	$("#messageWindow > li").last().append('<li>' + data +' </li>');
+	    	$("#messageWindow").scrollTop($("#messageWindow")[0].scrollHeight);
 	    });
 	 }	
 
