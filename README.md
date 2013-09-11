@@ -2,6 +2,6 @@ Kola is a messaging app built in rails
 
 ---------------------------------------
 
-It will use Websockets and faye to create the 
+It will use pusher to create the 
 live messaging features
 
