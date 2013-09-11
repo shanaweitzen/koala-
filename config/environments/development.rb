@@ -1,4 +1,6 @@
 Koala::Application.configure do
+  require 'mandrill'
+  require 'pusher'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,18 +29,16 @@ Koala::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
   
-config.action_mailer.default_url_options = { :host => 'localhost:3000'}
-config.action_mailer.raise_delivery_errors = true
-config.action_mailer.smtp.settings = {
-  host:'smtp.mandrillapp.com'
-  port:587 
-  SMTP Username: 'app18026036@heroku.com'
-  SMTP Password: 'UoVfenCZdEAYb0nuQ0vXmA'
+  config.action_mailer.default_url_options = { :host => 'localhost', :port => 3000 }
 
-}
-require 'pusher'
+
   Pusher.app_id = ENV['PUSHER_APP_ID'] 
   Pusher.key    = ENV['PUSHER_KEY']
   Pusher.secret = ENV['PUSHER_SECRET']
+
+
+
 end

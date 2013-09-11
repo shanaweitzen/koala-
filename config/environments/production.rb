@@ -63,7 +63,7 @@ Koala::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
@@ -75,16 +75,19 @@ Koala::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = { 
+    address: "smtp.mandrillapp.com", 
+    port: 587,
+    user_name: "shanaweitzen@gmail.com",
+    password: "UoVfenCZdEAYb0nuQ0vXmA"
+  }
+
+   config.action_mailer.default_url_options = { :host => 'wdichat.herokuapp.com'}
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
 
-config.action_mailer.default_url_options = { :host => 'http://wdichat.herokuapp.com/'}
-config.action_mailer.raise_delivery_errors = true
-config.action_mailer.smtp.settings = {
-  host:'smtp.mandrillapp.com'
-  port:587 
-  SMTP Username: 'app18026036@heroku.com'
-  SMTP Password: 'UoVfenCZdEAYb0nuQ0vXmA'
 
-}

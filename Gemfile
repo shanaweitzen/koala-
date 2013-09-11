@@ -54,7 +54,7 @@ gem 'oj'
 gem 'figaro'
 
 
-
+gem 'mandrill-api'
 # Use unicorn as the app server
 # gem 'unicorn'
 
