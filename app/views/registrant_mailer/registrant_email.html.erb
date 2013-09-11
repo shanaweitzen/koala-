@@ -1,6 +1,6 @@
 <p>To complete your Koala registration, please follow the link below:</p>
 
-<p><%= link_to registration_path %></p>
+<p><%= link_to registration_path %><%= @registrant.code %></a></p>
 
 <p>This link will expire at <%= @registrant.expires_at %>.</p>
 
