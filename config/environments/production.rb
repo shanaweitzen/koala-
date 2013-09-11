@@ -78,3 +78,13 @@ Koala::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
+
+config.action_mailer.default_url_options = { :host => 'http://wdichat.herokuapp.com/'}
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp.settings = {
+  host:'smtp.mandrillapp.com'
+  port:587 
+  SMTP Username: 'app18026036@heroku.com'
+  SMTP Password: 'UoVfenCZdEAYb0nuQ0vXmA'
+
+}

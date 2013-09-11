@@ -28,7 +28,15 @@ Koala::Application.configure do
   config.assets.debug = true
 
   
+config.action_mailer.default_url_options = { :host => 'localhost:3000'}
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp.settings = {
+  host:'smtp.mandrillapp.com'
+  port:587 
+  SMTP Username: 'app18026036@heroku.com'
+  SMTP Password: 'UoVfenCZdEAYb0nuQ0vXmA'
 
+}
 require 'pusher'
   Pusher.app_id = ENV['PUSHER_APP_ID'] 
   Pusher.key    = ENV['PUSHER_KEY']
