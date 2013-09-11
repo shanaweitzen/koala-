@@ -1,6 +1,6 @@
 To complete your Koala registration, please follow the link below:
 
-http://wdichat.herokuapp.com/users/new<%= @registrant.code %>
+<%= link_to registration_path %><%= @registrant.code %>
 
 This link will expire at <%= @registrant.expires_at %>.
 
