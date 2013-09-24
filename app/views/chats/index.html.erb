@@ -2,7 +2,9 @@
 <script id="template" type="text/template">
 	<div id="messageWindow">
 		{{#messages}}
-			<li><span class="user_name">{{ user.first_name }} {{user.last_name}}</span> : {{ text }}</li>
+			<li><span class="user_name">{{ user.first_name }} {{user.last_name}}</span> : {{ text }}
+			<span class="created_at">{{ created_at }}</span>
+			</li>
 		{{/messages }}
 	</div>
 	<div class="message_field">

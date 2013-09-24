@@ -39,6 +39,11 @@ Koala::Application.routes.draw do
 
  root "site#index" 
 
+#password_reset
+
+# get 'password_resets/new'
+
+#   resources :password_resets
   
 end
 

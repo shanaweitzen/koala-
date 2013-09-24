@@ -39,6 +39,10 @@
 	border-bottom:1px solid #ffde4f;
 }
 
+.created_at{
+	font-size: 12px;
+	float:right;
+}
 img{
 	/*margin:0 auto;*/
 	margin-left: 90px;
